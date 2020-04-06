@@ -6,9 +6,7 @@ const assertEqual = function(actual, expected) {
   }
 };
 
-const countOnly = function(allItems, itemsToCount) {
-
-
+const countOnly = (allItems, itemsToCount) => {
   for (item of allItems) {
     if (itemsToCount[item]) {
     if (results[item]) {
@@ -24,7 +22,7 @@ const countOnly = function(allItems, itemsToCount) {
   }
   return results;
 };
-
+module.exports = countOnly;
 const firstNames = [
   "Karl",
   "Salima",

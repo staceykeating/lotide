@@ -1,33 +1,18 @@
-function assertEqual(actual, expected) {
-  if (actual === expected) {
-    console.log(`🤠🤠🤠Assertion Passed: ${actual} === ${expected}`);
-  } else {
-    console.log(`😡😡😡Assertion Failed: ${actual} !== ${expected}`);
-  }
-};
-
-function eqArrays(arrayOne, arrayTwo) {
-  let stringOne = arrayOne.toString();
-  let stringTwo = arrayTwo.toString();
+const flatten = (array) => {
+  let newArray = [];
   
-  if (stringOne === stringTwo) {
-    return true;
-  } else return false; 
+  for (let x = 0; x < array.length; x++) {
+    if (Array.isArray(x)) {
+      for (let y = 0; y < x.length; y++) {
+        newArray += array[x][y];
+      }
+    } else newArray += array[x];
+  }
+  
+  return Array.from(newArray.split(",").join(""));
 };
 
-function flatten(array) {
-
-let newArray = [];
-
-for (let x = 0; x < array.length; x++) {
-  if (Array.isArray(x))
-  for (let y = 0; y < x.length; y++) {
-    newArray+= array[x][y]
-  }
-  else newArray+= array[x];
-  }
-return Array.from(newArray.split(",").join(""));
-};
+module.exports = flatten;
 const emojis = ["😎", ["💩", "🤗"], "😼", "😂"];
 console.log(flatten(emojis));
 

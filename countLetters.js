@@ -1,12 +1,4 @@
-const assertEqual = function(actual, expected) {
-  if (actual === expected) {
-    console.log(`🤠🤠🤠Assertion Passed: ${actual} === ${expected}`);
-  } else {
-    console.log(`😡😡😡Assertion Failed: ${actual} !== ${expected}`);
-  }
-};
-
-const countLetters = function(letters) {
+const countLetters = (letters) => {
   const results = {};
 
   for (const letter of letters) {
@@ -18,6 +10,9 @@ const countLetters = function(letters) {
   }
   return results;
 };
+
+module.exports = countLetters;
+
 countLetters('LHL');
 countLetters('Lighthouse');
 assertEqual(JSON.stringify(countLetters('LHL')),JSON.stringify({L: 2, H: 1}));

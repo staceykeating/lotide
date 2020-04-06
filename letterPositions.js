@@ -20,6 +20,7 @@ const letterPositions = function(sentence) {
     }
   } return results; 
 };
+module.exports = letterPositions;
 console.log(letterPositions("lighthouse in the house"));
 console.log(letterPositions("hello"));
 assertArraysEqual(JSON.stringify(letterPositions('LHL')),JSON.stringify({L: ['0','2'], H: ['1']}));

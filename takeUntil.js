@@ -1,16 +1,14 @@
-const takeUntil = function (items, callBack) {
-array = []
-
-for (let i = 0; i < items.length; i++) {
-  if (callBack(items[i])) {
-    return array;
+const takeUntil = (items, callBack) => {
+  let array = [];
+  for (let i = 0; i < items.length; i++) {
+    if (callBack(items[i])) {
+      return array;
+    }
+    array.push(items[i]);
   }
-  array.push(items[i]);
-}
   return array;
-
-}
-//for loop? slice?
+};
+module.exports = takeUntil;
 
 const data1 = [1, 2, 5, 7, 2, -1, 2, 4, 5];
 const results1 = takeUntil(data1, x => x < 0);
