@@ -1,7 +1,5 @@
 const takeUntil = function (items, callBack) {
-
 array = []
-// return items.filter(item => item = !callBack(item)? true : false); 
 
 for (let i = 0; i < items.length; i++) {
   if (callBack(items[i])) {
